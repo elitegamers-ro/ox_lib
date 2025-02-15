@@ -192,8 +192,8 @@ function lib.getVehicleProperties(vehicle)
 
         return {
             model = GetEntityModel(vehicle),
-            plate = GetVehicleNumberPlateText(vehicle),
-            plateIndex = GetVehicleNumberPlateTextIndex(vehicle),
+            -- plate = GetVehicleNumberPlateText(vehicle),
+            -- plateIndex = GetVehicleNumberPlateTextIndex(vehicle),
             bodyHealth = math.floor(GetVehicleBodyHealth(vehicle) + 0.5),
             engineHealth = math.floor(GetVehicleEngineHealth(vehicle) + 0.5),
             tankHealth = math.floor(GetVehiclePetrolTankHealth(vehicle) + 0.5),
@@ -306,13 +306,13 @@ function lib.setVehicleProperties(vehicle, props, fixVehicle)
         end
     end
 
-    if props.plate then
-        SetVehicleNumberPlateText(vehicle, props.plate)
-    end
+    -- if props.plate then
+    --     SetVehicleNumberPlateText(vehicle, props.plate)
+    -- end
 
-    if props.plateIndex then
-        SetVehicleNumberPlateTextIndex(vehicle, props.plateIndex)
-    end
+    -- if props.plateIndex then
+    --     SetVehicleNumberPlateTextIndex(vehicle, props.plateIndex)
+    -- end
 
     if props.bodyHealth then
         SetVehicleBodyHealth(vehicle, props.bodyHealth + 0.0)
