@@ -243,7 +243,8 @@ else
     ---@deprecated
     ---@diagnostic disable-next-line: duplicate-set-field
     function lib.notify(playerId, data)
-        TriggerClientEvent(notifyEvent, playerId, data)
+        -- TriggerClientEvent(notifyEvent, playerId, data)
+        TriggerClientEvent('eg-notify:AlertOx', playerId, data)
     end
 
     local poolNatives = {
