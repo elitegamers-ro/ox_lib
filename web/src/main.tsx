@@ -2,16 +2,10 @@ import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import './index.css';
 import App from './App';
-import { fas } from '@fortawesome/free-solid-svg-icons';
-import { far } from '@fortawesome/free-regular-svg-icons';
-import { fab } from '@fortawesome/free-brands-svg-icons';
-import { library } from '@fortawesome/fontawesome-svg-core';
 import { isEnvBrowser } from './utils/misc';
 import LocaleProvider from './providers/LocaleProvider';
 import ConfigProvider from './providers/ConfigProvider';
 import ErrorBoundary from './providers/errorBoundary';
-
-library.add(fas, far, fab);
 
 if (isEnvBrowser()) {
   const root = document.getElementById('root');
@@ -24,7 +18,6 @@ if (isEnvBrowser()) {
 }
 
 const root = document.getElementById('root');
-
 createRoot(root!).render(
   <StrictMode>
     <LocaleProvider>

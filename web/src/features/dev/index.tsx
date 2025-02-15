@@ -27,7 +27,7 @@ const Dev: React.FC = () => {
           mr={50}
           mb={50}
         >
-          <LibIcon icon="wrench" fontSize={24} />
+          <LibIcon icon="mdi:wrench" fontSize={24} />
         </ActionIcon>
       </Tooltip>
 

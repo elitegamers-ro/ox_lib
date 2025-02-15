@@ -11,7 +11,7 @@ const useStyles = createStyles((theme) => ({
   },
   inner: {
     '> svg > path': {
-      fill: theme.colors.dark[6],
+      fill: '#18181b',
     },
   },
 }));

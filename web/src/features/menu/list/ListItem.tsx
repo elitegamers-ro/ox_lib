@@ -3,7 +3,7 @@ import React, { forwardRef } from 'react';
 import CustomCheckbox from './CustomCheckbox';
 import type { MenuItem } from '../../../typings';
 import { isIconUrl } from '../../../utils/isIconUrl';
-import { IconProp } from '@fortawesome/fontawesome-svg-core';
+import { IconifyIcon } from '@iconify/react';
 import LibIcon from '../../../components/LibIcon';
 
 interface Props {
@@ -15,7 +15,7 @@ interface Props {
 
 const useStyles = createStyles((theme, params: { iconColor?: string }) => ({
   buttonContainer: {
-    backgroundColor: theme.colors.dark[6],
+    backgroundColor: '#18181b',
     borderRadius: theme.radius.md,
     padding: 2,
     height: 60,
@@ -88,12 +88,7 @@ const ListItem = forwardRef<Array<HTMLDivElement | null>, Props>(({ item, index,
             {typeof item.icon === 'string' && isIconUrl(item.icon) ? (
               <img src={item.icon} alt="Missing image" className={classes.iconImage} />
             ) : (
-              <LibIcon
-                icon={item.icon as IconProp}
-                className={classes.icon}
-                fixedWidth
-                animation={item.iconAnimation}
-              />
+              <LibIcon icon={item.icon as IconifyIcon} className={classes.icon} />
             )}
           </Box>
         )}
@@ -109,11 +104,11 @@ const ListItem = forwardRef<Array<HTMLDivElement | null>, Props>(({ item, index,
               </Text>
             </Stack>
             <Group spacing={1} position="center">
-              <LibIcon icon="chevron-left" className={classes.chevronIcon} />
+              <LibIcon icon="material-symbols:chevron-left" className={classes.chevronIcon} />
               <Text className={classes.scrollIndexValue}>
                 {scrollIndex + 1}/{item.values.length}
               </Text>
-              <LibIcon icon="chevron-right" className={classes.chevronIcon} />
+              <LibIcon icon="material-symbols:chevron-right" className={classes.chevronIcon} />
             </Group>
           </Group>
         ) : item.checked !== undefined ? (

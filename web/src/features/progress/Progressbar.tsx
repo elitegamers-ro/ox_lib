@@ -24,7 +24,7 @@ const useStyles = createStyles((theme) => ({
   },
   bar: {
     height: '100%',
-    backgroundColor: theme.colors[theme.primaryColor][theme.fn.primaryShade()],
+    backgroundColor: '#b91c1c',
   },
   labelWrapper: {
     position: 'absolute',

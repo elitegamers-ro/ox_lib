@@ -14,18 +14,16 @@ const useStyles = createStyles((theme, params: { position?: TextUiPosition }) =>
     width: '100%',
     position: 'absolute',
     display: 'flex',
-    alignItems: 
-      params.position === 'top-center' ? 'baseline' :
-      params.position === 'bottom-center' ? 'flex-end' : 'center',
-    justifyContent: 
-      params.position === 'right-center' ? 'flex-end' :
-      params.position === 'left-center' ? 'flex-start' : 'center',
+    alignItems:
+      params.position === 'top-center' ? 'baseline' : params.position === 'bottom-center' ? 'flex-end' : 'center',
+    justifyContent:
+      params.position === 'right-center' ? 'flex-end' : params.position === 'left-center' ? 'flex-start' : 'center',
   },
   container: {
     fontSize: 16,
     padding: 12,
     margin: 8,
-    backgroundColor: theme.colors.dark[6],
+    backgroundColor: '#18181b',
     color: theme.colors.dark[0],
     fontFamily: 'Roboto',
     borderRadius: theme.radius.sm,
@@ -58,9 +56,6 @@ const TextUI: React.FC = () => {
               {data.icon && (
                 <LibIcon
                   icon={data.icon}
-                  fixedWidth
-                  size="lg"
-                  animation={data.iconAnimation}
                   style={{
                     color: data.iconColor,
                     alignSelf: !data.alignIcon || data.alignIcon === 'center' ? 'center' : 'start',

@@ -10,7 +10,7 @@ import LibIcon from '../../../components/LibIcon';
 
 const useStyles = createStyles((theme, params: { position?: MenuPosition; itemCount: number; selected: number }) => ({
   tooltip: {
-    backgroundColor: theme.colors.dark[6],
+    backgroundColor: '#18181b',
     color: theme.colors.dark[2],
     borderRadius: theme.radius.sm,
     maxWidth: 350,
@@ -238,7 +238,7 @@ const ListMenu: React.FC = () => {
             </Box>
             {menu.items.length > 6 && selected !== menu.items.length - 1 && (
               <Box className={classes.scrollArrow}>
-                <LibIcon icon="chevron-down" className={classes.scrollArrowIcon} />
+                <LibIcon icon="material-symbols:chevron-down" className={classes.scrollArrowIcon} />
               </Box>
             )}
           </Box>

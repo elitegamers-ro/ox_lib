@@ -33,7 +33,7 @@ const NumberField: React.FC<Props> = (props) => {
       step={props.row.step}
       precision={props.row.precision}
       disabled={props.row.disabled}
-      icon={props.row.icon && <LibIcon icon={props.row.icon} fixedWidth />}
+      icon={props.row.icon && <LibIcon icon={props.row.icon} />}
       withAsterisk={props.row.required}
     />
   );

@@ -17,25 +17,28 @@ const useStyles = createStyles((theme) => ({
   container: {
     position: 'absolute',
     top: '15%',
-    right: '25%',
+    right: '20%',
     width: 320,
     height: 580,
+    fontSize: 20,
+    fontWeight: 400,
   },
   header: {
     justifyContent: 'center',
     alignItems: 'center',
-    marginBottom: 10,
+    marginBottom: 5,
     gap: 6,
   },
   titleContainer: {
-    borderRadius: 4,
-    flex: '1 85%',
-    backgroundColor: theme.colors.dark[6],
+    borderRadius: 6,
+    flex: '1 70%',
   },
   titleText: {
-    color: theme.colors.dark[0],
+    color: '#fff',
+    textShadow: '2px 1px 1px rgba(0, 0, 0, 0.3)',
     padding: 6,
-    textAlign: 'center',
+    textAlign: 'right',
+    fontSize: 25,
   },
   buttonsContainer: {
     height: 560,
@@ -89,14 +92,23 @@ const ContextMenu: React.FC = () => {
       <ScaleFade visible={visible}>
         <Flex className={classes.header}>
           {contextMenu.menu && (
-            <HeaderButton icon="chevron-left" iconSize={16} handleClick={() => openMenu(contextMenu.menu)} />
+            <HeaderButton
+              icon="material-symbols:chevron-left"
+              iconSize={18}
+              handleClick={() => openMenu(contextMenu.menu)}
+            />
           )}
           <Box className={classes.titleContainer}>
             <Text className={classes.titleText}>
               <ReactMarkdown components={MarkdownComponents}>{contextMenu.title}</ReactMarkdown>
             </Text>
           </Box>
-          <HeaderButton icon="xmark" canClose={contextMenu.canClose} iconSize={18} handleClick={closeContext} />
+          <HeaderButton
+            icon="iconamoon:close-bold"
+            canClose={contextMenu.canClose}
+            iconSize={18}
+            handleClick={closeContext}
+          />
         </Flex>
         <Box className={classes.buttonsContainer}>
           <Stack className={classes.buttonsFlexWrapper}>

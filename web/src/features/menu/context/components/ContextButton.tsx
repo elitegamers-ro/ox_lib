@@ -3,7 +3,7 @@ import ReactMarkdown from 'react-markdown';
 import { ContextMenuProps, Option } from '../../../../typings';
 import { fetchNui } from '../../../../utils/fetchNui';
 import { isIconUrl } from '../../../../utils/isIconUrl';
-import { IconProp } from '@fortawesome/fontawesome-svg-core';
+import { IconifyIcon } from '@iconify/react';
 import MarkdownComponents from '../../../../config/MarkdownComponents';
 import LibIcon from '../../../../components/LibIcon';
 
@@ -21,15 +21,16 @@ const useStyles = createStyles((theme, params: { disabled?: boolean; readOnly?: 
   },
   label: {
     width: '100%',
-    color: params.disabled ? theme.colors.dark[3] : theme.colors.dark[0],
+    color: params.disabled ? theme.colors.dark[3] : '#fff',
     whiteSpace: 'pre-wrap',
   },
   button: {
     height: 'fit-content',
     width: '100%',
+    backgroundColor: '#18181b',
     padding: 10,
     '&:hover': {
-      backgroundColor: params.readOnly ? theme.colors.dark[6] : undefined,
+      backgroundColor: params.readOnly ? '#44403c' : '#292524',
       cursor: params.readOnly ? 'unset' : 'pointer',
     },
     '&:active': {
@@ -45,23 +46,25 @@ const useStyles = createStyles((theme, params: { disabled?: boolean; readOnly?: 
   },
   dropdown: {
     padding: 10,
-    color: theme.colors.dark[0],
+    color: '#fff',
     fontSize: 14,
     maxWidth: 256,
     width: 'fit-content',
     border: 'none',
   },
   buttonStack: {
-    gap: 4,
+    gap: 8,
     flex: '1',
   },
   buttonGroup: {
-    gap: 4,
+    gap: 8,
     flexWrap: 'nowrap',
   },
   buttonIconContainer: {
-    width: 25,
-    height: 25,
+    minWidth: '35px',
+    height: '35px',
+    backgroundColor: theme.colors.dark[5],
+    borderRadius: theme.radius.sm,
     justifyContent: 'center',
     alignItems: 'center',
   },
@@ -113,11 +116,9 @@ const ContextButton: React.FC<{
                           <img src={button.icon} className={classes.iconImage} alt="Missing img" />
                         ) : (
                           <LibIcon
-                            icon={button.icon as IconProp}
-                            fixedWidth
-                            size="lg"
+                            icon={button.icon as IconifyIcon}
                             style={{ color: button.iconColor }}
-                            animation={button.iconAnimation}
+                            fontSize={18}
                           />
                         )}
                       </Stack>
@@ -132,13 +133,11 @@ const ContextButton: React.FC<{
                     <ReactMarkdown components={MarkdownComponents}>{button.description}</ReactMarkdown>
                   </Text>
                 )}
-                {button.progress !== undefined && (
-                  <Progress value={button.progress} size="sm" color={button.colorScheme || 'dark.3'} />
-                )}
+                {button.progress !== undefined && <Progress value={button.progress} size="sm" color="rgb(185 28 28)" />}
               </Stack>
               {(button.menu || button.arrow) && button.arrow !== false && (
                 <Stack className={classes.buttonArrowContainer}>
-                  <LibIcon icon="chevron-right" fixedWidth />
+                  <LibIcon icon="material-symbols:chevron-right" />
                 </Stack>
               )}
             </Group>
@@ -158,11 +157,7 @@ const ContextButton: React.FC<{
                   </Text>
 
                   {typeof metadata === 'object' && metadata.progress !== undefined && (
-                    <Progress
-                      value={metadata.progress}
-                      size="sm"
-                      color={metadata.colorScheme || button.colorScheme || 'dark.3'}
-                    />
+                    <Progress value={metadata.progress} size="sm" color="rgb(185 28 28)" />
                   )}
                 </>
               )

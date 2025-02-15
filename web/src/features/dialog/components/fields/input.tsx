@@ -27,7 +27,7 @@ const InputField: React.FC<Props> = (props) => {
           defaultValue={props.row.default}
           label={props.row.label}
           description={props.row.description}
-          icon={props.row.icon && <LibIcon icon={props.row.icon} fixedWidth />}
+          icon={props.row.icon && <LibIcon icon={props.row.icon} />}
           placeholder={props.row.placeholder}
           minLength={props.row.min}
           maxLength={props.row.max}
@@ -40,7 +40,7 @@ const InputField: React.FC<Props> = (props) => {
           defaultValue={props.row.default}
           label={props.row.label}
           description={props.row.description}
-          icon={props.row.icon && <LibIcon icon={props.row.icon} fixedWidth />}
+          icon={props.row.icon && <LibIcon icon={props.row.icon} />}
           placeholder={props.row.placeholder}
           minLength={props.row.min}
           maxLength={props.row.max}
@@ -52,7 +52,6 @@ const InputField: React.FC<Props> = (props) => {
               fontSize={size}
               cursor="pointer"
               className={classes.eyeIcon}
-              fixedWidth
             />
           )}
         />

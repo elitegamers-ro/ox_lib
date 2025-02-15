@@ -1,10 +1,8 @@
-import { IconProp } from '@fortawesome/fontawesome-svg-core';
+import { IconifyIcon } from '@iconify/react';
 
 export interface RadialMenuItem {
-  icon: string | IconProp;
+  icon: IconifyIcon | string;
   label: string;
   isMore?: boolean;
   menu?: string;
-  iconWidth?: number;
-  iconHeight?: number;
 }

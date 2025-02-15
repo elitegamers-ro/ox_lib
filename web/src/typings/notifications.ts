@@ -1,7 +1,6 @@
 import { ToastPosition } from 'react-hot-toast';
-import { IconProp } from '@fortawesome/fontawesome-svg-core';
+import { IconifyIcon } from '@iconify/react';
 import { Sx } from '@mantine/core';
-import { IconAnimation } from '../components/LibIcon';
 
 export interface NotificationProps {
   style?: Sx;
@@ -9,9 +8,8 @@ export interface NotificationProps {
   title?: string;
   duration?: number;
   showDuration?: boolean;
-  icon?: IconProp;
+  icon?: IconifyIcon | string;
   iconColor?: string;
-  iconAnimation?: IconAnimation;
   position?: ToastPosition | 'top' | 'bottom';
   id?: number | string;
   type?: string;

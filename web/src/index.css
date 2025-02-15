@@ -34,6 +34,12 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
+a {
+  color: rgb(185 28 28);
+  text-decoration: none;
+  font-weight: bold;
+}
+
 @keyframes progress-bar {
   from {
     width: 0%;

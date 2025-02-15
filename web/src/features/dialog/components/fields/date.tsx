@@ -34,7 +34,7 @@ const DateField: React.FC<Props> = (props) => {
           inputFormat={props.row.format}
           withAsterisk={props.row.required}
           clearable={props.row.clearable}
-          icon={props.row.icon && <LibIcon fixedWidth icon={props.row.icon} />}
+          icon={props.row.icon && <LibIcon icon={props.row.icon} />}
           minDate={props.row.min ? new Date(props.row.min) : undefined}
           maxDate={props.row.max ? new Date(props.row.max) : undefined}
         />
@@ -61,7 +61,7 @@ const DateField: React.FC<Props> = (props) => {
           inputFormat={props.row.format}
           withAsterisk={props.row.required}
           clearable={props.row.clearable}
-          icon={props.row.icon && <LibIcon fixedWidth icon={props.row.icon} />}
+          icon={props.row.icon && <LibIcon icon={props.row.icon} />}
           minDate={props.row.min ? new Date(props.row.min) : undefined}
           maxDate={props.row.max ? new Date(props.row.max) : undefined}
         />

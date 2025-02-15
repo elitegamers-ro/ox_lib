@@ -88,7 +88,7 @@ const CircleProgressbar: React.FC = () => {
             <RingProgress
               size={90}
               thickness={7}
-              sections={[{ value: 0, color: theme.primaryColor }]}
+              sections={[{ value: 0, color: '#b91c1c' }]}
               onAnimationEnd={() => setVisible(false)}
               className={classes.progress}
               label={<Text className={classes.value}>{value}%</Text>}

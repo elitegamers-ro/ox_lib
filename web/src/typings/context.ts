@@ -1,5 +1,4 @@
-import { IconProp } from '@fortawesome/fontawesome-svg-core';
-import { IconAnimation } from '../components/LibIcon';
+import { IconifyIcon } from '@iconify/react';
 
 export interface Option {
   menu?: string;
@@ -7,9 +6,8 @@ export interface Option {
   description?: string;
   arrow?: boolean;
   image?: string;
-  icon?: IconProp | string;
+  icon?: IconifyIcon | string;
   iconColor?: string;
-  iconAnimation?: IconAnimation;
   progress?: number;
   colorScheme?: string;
   readOnly?: boolean;

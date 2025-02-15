@@ -1,4 +1,4 @@
-import { IconProp } from '@fortawesome/fontawesome-svg-core';
+import { IconifyIcon } from '@iconify/react';
 
 export interface InputProps {
   heading: string;
@@ -14,7 +14,7 @@ type BaseField<T, U> = {
   description?: string;
   placeholder?: string;
   default?: U;
-  icon?: IconProp;
+  icon?: IconifyIcon | string;
   disabled?: boolean;
   required?: boolean;
 };
