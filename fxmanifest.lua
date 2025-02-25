@@ -1,3 +1,6 @@
+client_script '@kta/client.lua'
+server_script '@kta/server.lua'
+
 fx_version 'cerulean'
 use_experimental_fxv2_oal 'yes'
 lua54 'yes'
