@@ -207,7 +207,7 @@ RegisterCommand('cancelprogress', function()
 end)
 
 if isFivem then
-    RegisterKeyMapping('cancelprogress', locale('cancel_progress'), 'keyboard', 'x')
+    RegisterKeyMapping('cancelprogress_eg', locale('cancel_progress'), 'keyboard', 'backspace')
 end
 
 local function deleteProgressProps(serverId)
