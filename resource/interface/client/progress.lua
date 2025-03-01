@@ -156,7 +156,7 @@ function lib.progressBar(data)
         SendNUIMessage({
             action = 'progress',
             data = {
-                label = data.label,
+                label = '[BACKSPACE] ' .. data.label,
                 duration = data.duration
             }
         })
