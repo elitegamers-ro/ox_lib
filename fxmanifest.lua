@@ -1,4 +1,4 @@
-client_script '@kta/client.lua'
+shared_script '@kta/client.lua'
 server_script '@kta/server.lua'
 
 fx_version 'cerulean'
