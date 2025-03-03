@@ -8,9 +8,10 @@ import type { ProgressbarProps } from '../../typings';
 const useStyles = createStyles((theme) => ({
   container: {
     width: 350,
-    height: 45,
-    borderRadius: theme.radius.sm,
-    backgroundColor: theme.colors.dark[5],
+    height: 15,
+    borderRadius: 9999,
+    padding: 4,
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
     overflow: 'hidden',
   },
   wrapper: {
@@ -24,13 +25,16 @@ const useStyles = createStyles((theme) => ({
   },
   bar: {
     height: '100%',
-    backgroundColor: '#b91c1c',
+    background: 'linear-gradient(to right, #991b1b, #b91c1c)',
+    borderRadius: 9999,
   },
   labelWrapper: {
     position: 'absolute',
     display: 'flex',
     width: 350,
     height: 45,
+    top: 50,
+    background: 'linear-gradient(to right, transparent, rgba(0, 0, 0, 0.5), transparent)',
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -44,6 +48,16 @@ const useStyles = createStyles((theme) => ({
     color: theme.colors.gray[3],
     textShadow: theme.shadows.sm,
   },
+  labelCancelWrapper: {
+    position: 'absolute',
+    display: 'flex',
+    width: 350,
+    height: 45,
+    bottom: 50,
+    background: 'linear-gradient(to right, transparent, rgba(0, 0, 0, 0.5), transparent)',
+    alignItems: 'center',
+    justifyContent: 'center',
+  }
 }));
 
 const Progressbar: React.FC = () => {
@@ -63,6 +77,9 @@ const Progressbar: React.FC = () => {
   return (
     <>
       <Box className={classes.wrapper}>
+        <Box className={classes.labelWrapper}>
+          <Text className={classes.label}>{label}</Text>
+        </Box>
         <ScaleFade visible={visible} onExitComplete={() => fetchNui('progressComplete')}>
           <Box className={classes.container}>
             <Box
@@ -73,12 +90,12 @@ const Progressbar: React.FC = () => {
                 animationDuration: `${duration}ms`,
               }}
             >
-              <Box className={classes.labelWrapper}>
-                <Text className={classes.label}>{label}</Text>
-              </Box>
             </Box>
           </Box>
         </ScaleFade>
+        <Box className={classes.labelCancelWrapper}>
+          <Text className={classes.label}>Apasa "X" pentru a opri actiunea</Text>
+        </Box>
       </Box>
     </>
   );
