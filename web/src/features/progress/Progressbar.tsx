@@ -52,6 +52,13 @@ const useStyles = createStyles((theme) => ({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  labelCancel: {
+    maxWidth: 350,
+    padding: 8,
+    fontSize: 16,
+    color: theme.colors.gray[3],
+    textShadow: theme.shadows.sm,
+  },
   progressWrapper: {
     display: 'flex',
     width: '100%',
@@ -67,7 +74,7 @@ const useStyles = createStyles((theme) => ({
   percentageLabel: {
     position: 'absolute',
     right: '-3.75rem',
-    fontSize: 18,
+    fontSize: 15,
     width: '3.1rem',
     display: 'flex',
     alignItems: 'center',
@@ -153,7 +160,7 @@ const Progressbar: React.FC = () => {
 
       {visible ?
         <Box className={classes.labelCancelWrapper}>
-          <Text className={classes.label}>Apasa "X" pentru a opri actiunea</Text>
+          <Text className={classes.labelCancel}>Apasa "BACKSPACE" pentru a opri actiunea</Text>
         </Box>
       : null}
       </Box>
