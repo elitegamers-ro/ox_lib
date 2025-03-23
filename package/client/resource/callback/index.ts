@@ -4,6 +4,8 @@ const pendingCallbacks: Record<string, (...args: any[]) => void> = {};
 const callbackTimeout = GetConvarInt('ox:callbackTimeout', 300000);
 
 onNet(`__ox_cb_${cache.resource}`, (key: string, ...args: any) => {
+  if (!source) return;
+
   const resolve = pendingCallbacks[key];
 
   if (!resolve) return;
@@ -55,9 +57,10 @@ export function triggerServerCallback<T = unknown>(
 }
 
 export function onServerCallback(eventName: string, cb: (...args: any[]) => any) {
-  exports.ox_lib.setValidCallback(eventName, true)
+  eventName = `__ox_cb_${eventName}`
 
-  onNet(`__ox_cb_${eventName}`, async (resource: string, key: string, ...args: any[]) => {
+  exports.ox_lib.setValidCallback(eventName, true)
+  onNet(eventName, async (resource: string, key: string, ...args: any[]) => {
     let response: any;
 
     try {
