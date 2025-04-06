@@ -215,12 +215,12 @@ RegisterNUICallback('progressComplete', function(data, cb)
     progress = nil
 end)
 
-RegisterCommand('cancelprogress', function()
+RegisterCommand('cancelprogress_eg', function()
     if progress?.canCancel then progress = false end
 end)
 
 if isFivem then
-    RegisterKeyMapping('cancelprogress', 'Anuleaza bara de progres EG', 'keyboard', 'back')
+    RegisterKeyMapping('cancelprogress_eg', 'Anuleaza bara de progres EG', 'keyboard', 'back')
 end
 
 local function deleteProgressProps(serverId)
