@@ -220,7 +220,7 @@ RegisterCommand('cancelprogress', function()
 end)
 
 if isFivem then
-    RegisterKeyMapping('cancelprogress_eg_05042025', locale('cancel_progress'), 'keyboard', 'back')
+    RegisterKeyMapping('cancelprogress', 'Anuleaza bara de progres EG', 'keyboard', 'back')
 end
 
 local function deleteProgressProps(serverId)
