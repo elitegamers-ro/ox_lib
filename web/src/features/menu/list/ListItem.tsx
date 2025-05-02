@@ -15,7 +15,7 @@ interface Props {
 
 const useStyles = createStyles((theme, params: { iconColor?: string }) => ({
   buttonContainer: {
-    backgroundColor: '#18181b',
+    backgroundColor: 'rgba(24, 24, 27, 0.8)',
     borderRadius: theme.radius.md,
     padding: 2,
     height: 60,
