@@ -234,7 +234,7 @@ const ListMenu: React.FC = () => {
             </Box>
             {menu.items.length > 6 && selected !== menu.items.length - 1 && (
               <Box className={classes.scrollArrow}>
-                <LibIcon icon="material-symbols:chevron-down" className={classes.scrollArrowIcon} />
+                <LibIcon icon="tabler:chevron-down" className={classes.scrollArrowIcon} />
               </Box>
             )}
           </Box>
