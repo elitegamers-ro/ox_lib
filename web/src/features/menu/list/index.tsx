@@ -35,7 +35,7 @@ const useStyles = createStyles((theme, params: { position?: MenuPosition; itemCo
     borderTopRightRadius: 0,
   },
   scrollArrow: {
-    backgroundColor: theme.colors.dark[8],
+    backgroundColor: 'rgba(24, 24, 27, 0.8)',
     textAlign: 'center',
     borderBottomLeftRadius: theme.radius.md,
     borderBottomRightRadius: theme.radius.md,

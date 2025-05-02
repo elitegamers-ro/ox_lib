@@ -21,7 +21,7 @@ const useStyles = createStyles((theme, params: { iconColor?: string }) => ({
     height: 60,
     scrollMargin: 8,
     '&:focus': {
-      backgroundColor: theme.colors.dark[4],
+      backgroundColor: 'rgb(9 9 11 )',
       outline: 'none',
     },
   },
